@@ -1,15 +1,31 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("=== Testing MyArrayList ===");
+        MyList<Integer> arrayList = new MyArrayList<>();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        for (int i = 1; i <= 6; i++) {
+            arrayList.add(i);
         }
+        System.out.println("Original array list: " + arrayList);
+
+        arrayList.remove(2);
+        System.out.println("After removing index 2: " + arrayList);
+
+        System.out.println("Element at index 1: " + arrayList.get(1));
+        System.out.println("Size: " + arrayList.size());
+
+        System.out.println("\n=== Testing MyLinkedList ===");
+        MyList<Integer> linkedList = new MyLinkedList<>();
+
+        for (int i = 1; i <= 6; i++) {
+            linkedList.add(i);
+        }
+        System.out.println("Original linked list: " + linkedList);
+
+        linkedList.remove(2);
+        System.out.println("After removing index 2: " + linkedList);
+
+        System.out.println("Element at index 1: " + linkedList.get(1));
+        System.out.println("Size: " + linkedList.size());
     }
 }
